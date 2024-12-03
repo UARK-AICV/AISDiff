@@ -58,22 +58,16 @@
                         </br>University of Arkansas
                     </li>
                     <li>
-                        <a href="https://www.mgharbi.com/">
-                          Micha&euml;l Gharbi
+                        <a href="https://www.linkedin.com/in/tringn/">
+                          Tri Nguyen
                         </a>
-                        </br>Adobe Research
+                        </br>Coupang, Inc.
                     </li>
                     <li>
-                        <a href="https://www.kalyans.org/">
-                          Kalyan Sunkavalli
+                        <a href="https://www.uark-aicv.github.io/">
+                          Ngan Le
                         </a>
-                        </br>Adobe Research
-                    </li>
-                    <li>
-                          <a href="https://projects.ayanc.org/">
-                          Ayan Chakrabarti
-                        </a>
-                        </br>WUSTL
+                        </br>University of Arkansas
                     </li>
                 </ul>
             </div>
@@ -83,19 +77,19 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Xia_Basis_Prediction_Networks_for_Effective_Burst_Denoising_With_Large_Kernels_CVPR_2020_paper.html">
+                            <a href="https://arxiv.org/pdf/2409.18256">
                             <image src="paper.jpg" height="120px"><br>
                                 <h4><strong>Paper</strong></h4>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="https://youtu.be/jFubeqxJO6U">
                             <image src="youtube_icon.png" height="120px"><br>
                                 <h4><strong>Technical Video</strong></h4>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
-                            <a href="https://github.com/likesum/bpn">
+                            <a href="https://github.com/UARK-AICV/AISDiff">
                             <image src="github_icon.png" height="120px"><br>
                                 <h4><strong>Code</strong></h4>
                             </a>
@@ -105,7 +99,7 @@
         </div>
 
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Example Results
@@ -114,16 +108,8 @@
                 <img src="teaser_kpn.png" style="max-height: 20em; max-width:32%">  
                 <img src="teaser_bpn.png" style="max-height: 20em; max-width:32%">
             </div>
-        </div>
+        </div> -->  
 
-
-<!--         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Links
-                </h3>
-            </div>
-        </div> -->
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -131,54 +117,48 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-                Bursts of images exhibit significant self-similarity across both time and space. This motivates a representation of the kernels as linear combinations of a small set of basis elements. To this end, we introduce a novel basis prediction network that, given an input burst, predicts a set of global basis kernels --- shared within the image --- and the corresponding mixing coefficients --- which are specific to individual pixels. Compared to other state-of-the-art deep learning techniques that output a large tensor of per-pixel spatiotemporal kernels, our formulation substantially reduces the dimensionality of the network output. This allows us to effectively exploit larger denoising kernels and achieve significant quality improvements (over 1dB PSNR) at reduced run-times compared to state-of-the-art methods.
+                    Amodal Instance Segmentation (AIS) presents an intriguing challenge, including the segmentation prediction of both visible and occluded parts of objects within images. Previous methods have often relied on shape prior information gleaned from training data to enhance amodal segmentation. However, these approaches are susceptible to overfitting and  disregard object category details. Recent advancements highlight the potential of conditioned diffusion models, pretrained on extensive datasets, to generate images from latent space. Drawing inspiration from this, we propose AISDiff with a Diffusion Shape Prior Estimation (DiffSP) module. AISDiff begins with the prediction of the visible segmentation mask and object category, alongside occlusion-aware processing through the prediction of occluding masks. Subsequently, these elements are inputted into our DiffSP module to infer the shape prior of the object. DiffSP utilizes conditioned diffusion models pretrained on extensive datasets to extract rich visual features for shape prior estimation. Additionally, we introduce the Shape Prior Amodal Predictor, which utilizes attention-based feature maps from the shape prior to refine amodal segmentation. Experiments across various AIS benchmarks demonstrate the effectiveness of our AISDiff.
                 </p>
-                <image src="overview.png" class="img-responsive" alt="overview"><br>
+                <image src="pipeline2/pipeline2-1.png" class="img-responsive" alt="overview"><br>
             </div>
         </div>
 
-
-<!--         <div class="row" id="header_img">
-            <figure class="col-md-8 col-md-offset-2">
-                <image src="img/llff_teaser.png" class="img-responsive" alt="overview">
-                <figcaption>
-                </figcaption>
-            </figure>
-
-        </div> -->
+       <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Proposed Modules
+                </h3>
+                <img src="diffusion_shapeprior/diffusion_shapeprior-1.png" style="max-height: 30em; max-width:50%"> 
+                <img src="amodal_predictor/amodal_predictor-1.png" style="max-height: 30em; max-width:50%">  
+            </div>
+        </div>
 
         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Qualitative Results
+                </h3>
+                <image src="qualitative_results/qualitative_results-1.png" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+                    Qualitative results of AISDiff. Left to right: Input RoI, Visible masks, Occluding masks, Amodal masks. Best viewed in color
+                </p>
+            </div>
+        </div>
+<
+
+        <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Technical Video
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:56.25%;">
-<!--                         <iframe align="center" width="100%" height="422" src="https://www.youtube.com/embed/LY6MgDUzS3M" frameborder="0" allowfullscreen></iframe> -->
                         <iframe src="https://www.youtube.com/embed/jFubeqxJO6U" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>
                 </div>
             </div>
-        </div>
-
-<!--         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    BibTeX
-                </h3>
-                <div class="form-group col-md-10 col-md-offset-1">
-                    <textarea id="bibtex" class="form-control" readonly>
-@InProceedings{Xia_2020_CVPR,
-author = {Xia, Zhihao and Perazzi, Federico and Gharbi, Michael and Sunkavalli, Kalyan and Chakrabarti, Ayan},
-title = {Basis Prediction Networks for Effective Burst Denoising With Large Kernels},
-booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {June},
-year = {2020}
-}
-</textarea>
-                </div>
-            </div>
         </div> -->
+
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -187,13 +167,13 @@ year = {2020}
                 </h3>
                 <div class="form-group col-md-10 col-md-offset-1">
                     <textarea id="bibtex" class="form-control" readonly>
-@InProceedings{Xia_2020_CVPR,
-author = {Xia, Zhihao and Perazzi, Federico and Gharbi, Micha{\"e}l and Sunkavalli, Kalyan and Chakrabarti, Ayan},
-title = {Basis Prediction Networks for Effective Burst Denoising With Large Kernels},
-booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {June},
-year = {2020}
-}
+                    @article{tran2024amodal,
+                        title={Amodal Instance Segmentation with Diffusion Shape Prior Estimation},
+                        author={Tran, Minh and Vo, Khoa and Nguyen, Tri and Le, Ngan},
+                        journal={arXiv preprint arXiv:2409.18256},
+                        year={2024}
+                        }
+                          
 </textarea>
                 </div>
             </div>
@@ -204,7 +184,7 @@ year = {2020}
                 <h3>
                     Acknowledgements
                 </h3>
-                We thank the CVPR reviewers for their constructive comments. ZX and AC acknowledge support from the National Science Foundation under award no. <a class="author" href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1820693">IIS-1820693</a>, and from a generous gift funding from Adobe Research. The website template was borrowed from <a href="http://mgharbi.com/">Micha&euml;l Gharbi</a>.
+                This work is sponsored by the National Science Foundation (NSF) under Award No OIA-1946391. The website template was borrowed from <a href="http://mgharbi.com/">Micha&euml;l Gharbi</a>.
                 </p>
             </div>
         </div>
